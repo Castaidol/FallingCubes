@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{CFF47080-4EB4-65DF-2CEC-717D5FE7DC11}|">
+  <MonoDevelop.Ide.ItemProperties.FallingCubes PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraFollow.cs">
+    <Files>
+      <File FileName="Assets/Scripts/FallingCube.cs" Line="37" Column="33" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="16" Column="111" />
+      <File FileName="Assets/Scripts/Player.cs" Line="38" Column="40" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
