@@ -8,9 +8,11 @@ public class Spawner : MonoBehaviour
     [Header("Time to spawn")]
     public float minTime;
     public float maxTime;
+    public float offsetUnit;
+
+    int offsetMultiplier;
 
 
-    int offsetX;
 	private void Start()
 	{
         InvokeRepeating("InstantiateCubeSecond", Random.Range(minTime, maxTime), Random.Range(minTime, maxTime));
@@ -19,8 +21,9 @@ public class Spawner : MonoBehaviour
 
     private void InstantiateCubeSecond()
     {
-        offsetX = Random.Range(-3, 3);
-        Vector3 InstaPosition = new Vector3(transform.position.x + (float)offsetX, transform.position.y, transform.position.z);
+        offsetMultiplier = Random.Range(-3, 3);
+        float offsetX = (float)offsetMultiplier * offsetUnit;
+        Vector3 InstaPosition = new Vector3(transform.position.x + offsetX, transform.position.y, transform.position.z);
         Instantiate(cube, InstaPosition, Quaternion.identity);
     }
 }

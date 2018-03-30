@@ -36,7 +36,10 @@ public class Player : MonoBehaviour {
         if (direX >= 0.2f) x = 1;
         if (direX > -0.2 && direX < 0.2) x = 0;
 */
-        x = Input.GetAxisRaw("Horizontal");
+        if (transform.position.x >= -10.5f && transform.position.x <= 10.5f) x = Input.GetAxisRaw("Horizontal");
+        else if (transform.position.x < -10.5 && Input.GetAxisRaw("Horizontal") >= 0) x = Input.GetAxisRaw("Horizontal");
+        else if (transform.position.x > 10.5 && Input.GetAxisRaw("Horizontal") <= 0) x = Input.GetAxisRaw("Horizontal");
+
 
         if ((x != 0 ) && !isRotate)
         {
