@@ -9,6 +9,7 @@ public class FallingCube : MonoBehaviour {
     Vector3 targetPosition;
     Vector3 startPosition;
 
+    public GameObject cube;
 
 	void Start () 
     {
@@ -16,7 +17,6 @@ public class FallingCube : MonoBehaviour {
         targetY = positionFloor.position.y;
         targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
         startPosition = transform.position;
-
 	}
 	
 
@@ -34,7 +34,13 @@ public class FallingCube : MonoBehaviour {
 	{
         if(other.tag == "Floor")
         {
-            Destroy(gameObject);
+
+            BoxCollider box = GetComponent<BoxCollider>();
+            box.enabled = false;
+            MeshRenderer mesh = GetComponent<MeshRenderer>();
+            mesh.enabled = false;
+
+            InstantiateCubes();
         }
 	}
 
@@ -43,4 +49,18 @@ public class FallingCube : MonoBehaviour {
         startPosition = transform.position;
         StartCoroutine(FallingSlowly());
 	}
+
+
+
+    void InstantiateCubes()
+    {
+        Vector3 position = new Vector3(transform.position.x - 0.5f, transform.position.y + 0.55f, transform.position.z -0.5f);
+        InstantiateOneCube(position);
+    }
+
+    void InstantiateOneCube(Vector3 position)
+    {
+        Instantiate(cube, position, Quaternion.identity, transform);
+    }
+
 }

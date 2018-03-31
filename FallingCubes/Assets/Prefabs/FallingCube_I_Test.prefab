@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 65499916948293756}
   - component: {fileID: 23318515322264628}
   - component: {fileID: 114852015246063938}
-  m_Layer: 0
+  - component: {fileID: 54145693037231020}
+  m_Layer: 8
   m_Name: FallingCube_I_Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784674843550816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.54571, y: 5.41, z: 18.324846}
+  m_LocalPosition: {x: -1.13, y: 4.84, z: -1.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,6 +85,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784674843550816}
   m_Mesh: {fileID: 4300000, guid: dd9423b483cd58d4f9159e05ef95e6b2, type: 3}
+--- !u!54 &54145693037231020
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784674843550816}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65499916948293756
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -108,3 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
+  cube: {fileID: 1455995621495812, guid: 95a12af093eb14a7cb8dcc5544a5fa4e, type: 2}
+  minForce: 300
+  maxForce: 500
