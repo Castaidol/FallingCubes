@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.ItemProperties.FallingCubes PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FallingCube.cs">
     <Files>
-      <File FileName="Assets/Scripts/ExplodingCubes.cs" Line="42" Column="115" />
-      <File FileName="Assets/Scripts/FallingCube.cs" Line="37" Column="33" />
+      <File FileName="Assets/Scripts/ExplodingCubes.cs" Line="18" Column="28" />
+      <File FileName="Assets/Scripts/FallingCube.cs" Line="13" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
