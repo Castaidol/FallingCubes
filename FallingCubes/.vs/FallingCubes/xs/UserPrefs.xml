@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{CFF47080-4EB4-65DF-2CEC-717D5FE7DC11}|">
   <MonoDevelop.Ide.ItemProperties.FallingCubes PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FallingCube.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FallingCoin.cs">
     <Files>
-      <File FileName="Assets/Scripts/ExplodingCubes.cs" Line="18" Column="28" />
-      <File FileName="Assets/Scripts/FallingCube.cs" Line="13" Column="5" />
+      <File FileName="Assets/Scripts/FallingCube.cs" Line="82" Column="3" />
+      <File FileName="Assets/Scripts/FallingCoin.cs" Line="64" Column="13" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="46" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

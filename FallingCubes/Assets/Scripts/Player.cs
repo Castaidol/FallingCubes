@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 
 
     public float rotationPeriod = 0.3f;     
-    public float sideLength = 1f;           
+    public float sideLength = 1f;
 
     bool isRotate = false;                  
     float directionX = 0;                   
@@ -23,6 +23,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         radius = sideLength * Mathf.Sqrt(2f) / 2f;
+
     }
 
    

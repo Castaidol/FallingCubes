@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784674843550816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13, y: 4.84, z: -1.73}
+  m_LocalPosition: {x: -0.08543666, y: 4.485, z: 0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  cube: {fileID: 1455995621495812, guid: 95a12af093eb14a7cb8dcc5544a5fa4e, type: 2}
-  minForce: 300
-  maxForce: 500
+  fallingCubePieces: {fileID: 1860896806337416, guid: f65ca75004e974048a8be18dda402ff3,
+    type: 2}
+  playerCubePieces: {fileID: 1038688032817286, guid: 8fc63164c96934f59aecda4bcfd99b4c,
+    type: 2}

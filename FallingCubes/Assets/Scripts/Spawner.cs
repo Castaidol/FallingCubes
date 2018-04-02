@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject cube;
+    public GameObject coin;
     [Header("Time to spawn")]
     public float minTime;
     public float maxTime;
@@ -24,6 +25,14 @@ public class Spawner : MonoBehaviour
         offsetMultiplier = Random.Range(-3, 3);
         float offsetX = (float)offsetMultiplier * offsetUnit;
         Vector3 InstaPosition = new Vector3(transform.position.x + offsetX, transform.position.y, transform.position.z);
-        Instantiate(cube, InstaPosition, Quaternion.identity);
+
+        GameObject toSpawn;
+
+        float rn = Random.Range(0, 100);
+
+        if (rn <= 90) toSpawn = cube;
+        else toSpawn = coin;
+
+        Instantiate(toSpawn, InstaPosition, Quaternion.Euler(90, 0, 0));
     }
 }
