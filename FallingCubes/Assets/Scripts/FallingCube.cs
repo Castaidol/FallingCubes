@@ -6,6 +6,7 @@ public class FallingCube : MonoBehaviour {
     
     public GameObject fallingCubePieces;
     public GameObject playerCubePieces;
+    public GameObject gameOverPanel;
 
     public float Speed;
 
@@ -41,7 +42,9 @@ public class FallingCube : MonoBehaviour {
     IEnumerator GameOver()
     {
         Debug.Log("Game Over");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
 
     }
 

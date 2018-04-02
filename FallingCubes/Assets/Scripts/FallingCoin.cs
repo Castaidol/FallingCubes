@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingCoin : MonoBehaviour {
-
+    
     public GameObject fallingCoinPieces;
     public GameObject playerCubePieces;
 
@@ -15,7 +15,6 @@ public class FallingCoin : MonoBehaviour {
     Vector3 targetPosition;
     Vector3 startPosition;
 
-    GameManager gameManager;
 
     void Start()
     {
@@ -42,8 +41,6 @@ public class FallingCoin : MonoBehaviour {
         Destroy(toDestroy);
     }
 
-   
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Floor")
@@ -61,8 +58,6 @@ public class FallingCoin : MonoBehaviour {
 
         if (other.tag == "Player")
         {
-            gameManager.GetCoin();
-
             hit = true;
             StopCoroutine(FallingSlowly());
             MeshCollider box = GetComponentInChildren<MeshCollider>();
@@ -72,6 +67,9 @@ public class FallingCoin : MonoBehaviour {
 
             InstantiateCubes(fallingCoinPieces);
             StartCoroutine(DestroyCube(gameObject));
+            int coinCount = PlayerPrefs.GetInt("Coin");
+            coinCount++;
+            PlayerPrefs.SetInt("Coin", coinCount);
         }
     }
 
@@ -79,7 +77,7 @@ public class FallingCoin : MonoBehaviour {
     {
         startPosition = transform.position;
         if(!hit) StartCoroutine(FallingSlowly());
-
+        
     }
 
 

@@ -2,46 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI coinText;
+    public GameObject gameOverPanel;
 
-    public int seconds;
-    public int coinCount;
+    int seconds;
+    int oldCoinCount;
+    int coinCount;
     float timer;
+    bool isGameOver;
+
 
 	void Start () {
-
+        
         timerText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<TextMeshProUGUI>();
         coinText = GameObject.FindGameObjectWithTag("CoinText").GetComponent<TextMeshProUGUI>();
-        PlayerPrefs.SetInt("Coin", 0);
         coinCount = PlayerPrefs.GetInt("Coin");
+        oldCoinCount = coinCount;
         coinText.text = coinCount.ToString();
-        timer = 31;
+        isGameOver = false;
+        timer = 11;
 	}
 
 
     void Update()
     {
         timer -= Time.deltaTime;
-        seconds = (int)timer % 60;
-
+        seconds = (int)timer;
+        coinCount = PlayerPrefs.GetInt("Coin");
+        if(coinCount > oldCoinCount)
+        {
+            timer = timer + 5;
+            oldCoinCount = coinCount;
+        }
+        coinText.text = coinCount.ToString();
         timerText.text = seconds.ToString();
 
-        if(seconds == 0)
+        if(seconds == 0 && !isGameOver)
         {
+            isGameOver = true;
             Time.timeScale = 0.2f;
+            StartCoroutine(GameOver());
         }
     }
 
-    public void GetCoin()
+    IEnumerator GameOver()
     {
-        seconds += 5;
-        coinCount = PlayerPrefs.GetInt("Coin");
-        coinCount++;
-        coinText.text = coinCount.ToString();
-        PlayerPrefs.SetInt("Coin", coinCount);
+        Debug.Log("Game Over");
+        yield return new WaitForSeconds(0.25f);
+        Time.timeScale = 0;
+        gameOverPanel.SetActive(true);
+
     }
 }
