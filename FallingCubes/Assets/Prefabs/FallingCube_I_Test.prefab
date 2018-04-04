@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54145693037231020}
   m_Layer: 8
   m_Name: FallingCube_I_Test
-  m_TagString: Untagged
+  m_TagString: FallingCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,5 @@ MonoBehaviour:
   fallingCubePieces: {fileID: 1860896806337416, guid: f65ca75004e974048a8be18dda402ff3,
     type: 2}
   playerCubePieces: {fileID: 1038688032817286, guid: 8fc63164c96934f59aecda4bcfd99b4c,
-    type: 2}
-  gameOverPanel: {fileID: 1330725064800288, guid: be7edc5ce96e847429bc91933df7ce07,
     type: 2}
   Speed: 4

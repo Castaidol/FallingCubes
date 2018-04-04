@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
 
         float rn = Random.Range(0, 100);
 
-        if (rn <= 90) toSpawn = cube;
+        if (rn <= 82) toSpawn = cube;
         else toSpawn = coin;
 
         Instantiate(toSpawn, InstaPosition, Quaternion.Euler(90, 0, 0));

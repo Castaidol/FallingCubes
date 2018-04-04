@@ -6,9 +6,11 @@ public class FallingCube : MonoBehaviour {
     
     public GameObject fallingCubePieces;
     public GameObject playerCubePieces;
-    public GameObject gameOverPanel;
+
+    GameObject gameOverPanel;
 
     public float Speed;
+    public bool hitPlayer;
 
     float targetY;
     Vector3 targetPosition;
@@ -22,6 +24,7 @@ public class FallingCube : MonoBehaviour {
         targetY = positionFloor.position.y;
         targetPosition = new Vector3(transform.position.x, targetY, transform.position.z);
         startPosition = transform.position;
+        hitPlayer = false;
 	}
 	
 
@@ -42,9 +45,9 @@ public class FallingCube : MonoBehaviour {
     IEnumerator GameOver()
     {
         Debug.Log("Game Over");
+        hitPlayer = true;
         yield return new WaitForSeconds(0.25f);
         Time.timeScale = 0;
-        gameOverPanel.SetActive(true);
 
     }
 

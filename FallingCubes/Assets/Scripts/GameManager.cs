@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI coinText;
     public GameObject gameOverPanel;
 
-    int seconds;
+    [HideInInspector]
+    public int seconds;
     int oldCoinCount;
     int coinCount;
     float timer;
     bool isGameOver;
 
+    GameObject[] fallingCubes;
 
 	void Start () {
         
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour {
         oldCoinCount = coinCount;
         coinText.text = coinCount.ToString();
         isGameOver = false;
-        timer = 11;
+        timer = 41;
 	}
 
 
@@ -47,6 +49,14 @@ public class GameManager : MonoBehaviour {
             isGameOver = true;
             Time.timeScale = 0.2f;
             StartCoroutine(GameOver());
+        }
+
+        fallingCubes = GameObject.FindGameObjectsWithTag("FallingCube");
+
+        foreach(GameObject cube in fallingCubes)
+        {
+            bool hitPlayer = cube.GetComponent<FallingCube>().hitPlayer;
+            if(hitPlayer) StartCoroutine(GameOver());
         }
     }
 

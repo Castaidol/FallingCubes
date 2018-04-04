@@ -8,6 +8,8 @@ TagManager:
   - TimerText
   - CoinText
   - GameOverPanel
+  - GameManager
+  - FallingCube
   layers:
   - Default
   - TransparentFX
