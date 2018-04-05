@@ -30,16 +30,22 @@ public class Player : MonoBehaviour {
     void Update()
     {
         float x = 0;
-        /*float direX;
+        float direX;
         direX = Input.acceleration.x;
-
+        /*
         if (direX <= -0.2f) x = -1;
         if (direX >= 0.2f) x = 1;
         if (direX > -0.2 && direX < 0.2) x = 0;
+
+
+        if (transform.position.x < -10.5 && direX <= 0) return; 
+        else if (transform.position.x > 10.5 && direX >= 0) return;
 */
+
         if (transform.position.x >= -10.5f && transform.position.x <= 10.5f) x = Input.GetAxisRaw("Horizontal");
         else if (transform.position.x < -10.5 && Input.GetAxisRaw("Horizontal") >= 0) x = Input.GetAxisRaw("Horizontal");
         else if (transform.position.x > 10.5 && Input.GetAxisRaw("Horizontal") <= 0) x = Input.GetAxisRaw("Horizontal");
+
 
 
         if ((x != 0 ) && !isRotate)

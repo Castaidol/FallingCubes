@@ -14,6 +14,6 @@ MonoBehaviour:
   name: 
   description: 
   isUnlocked: 0
-  unlockCost: 0
+  unlockCost: 900
   levelIndex: 0
   levelImage: {fileID: 21300012, guid: 28b41fef228d6814f90e541deaf9f262, type: 3}

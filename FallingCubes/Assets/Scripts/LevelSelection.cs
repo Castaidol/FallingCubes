@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelSelection : MonoBehaviour
 {
     public Level[] levels;
     //public Sprite[] levelSprites; 
     public float speed = 0.5f;
+
+    public TMP_Text levelName;
+    public TMP_Text price;
+    public TMP_Text totalMoney;
+
+    TextMeshProUGUI levelNameText;
+    TextMeshProUGUI levelPriceText;
+    TextMeshProUGUI totalMoneyText;
 
     Image currentLevelImage;
 
@@ -25,13 +34,31 @@ public class LevelSelection : MonoBehaviour
         canPress = true;
         levelIndex = PlayerPrefs.GetInt("levelIndex");
         currentLevelImage.sprite = levels[levelIndex].levelImage;
+        levelNameText = levelName.GetComponent<TextMeshProUGUI>();
+        levelPriceText = price.GetComponent<TextMeshProUGUI>();
+        totalMoneyText = totalMoney.GetComponent<TextMeshProUGUI>();
+
 	}
 	
 	
 	void Update () 
     {
-        if(isPressed && canPress) StartCoroutine(ChangeLevelSelected(levelIndex));
+        totalMoneyText.text = PlayerPrefs.GetInt("Coin").ToString();
 
+        if(isPressed && canPress) StartCoroutine(ChangeLevelSelected(levelIndex));
+        if (levels[levelIndex].isUnlocked)
+        {
+            levelNameText.text = levels[levelIndex].name;
+        }
+        else
+        {
+            levelName.text = "????";
+            levelPriceText.text = levels[levelIndex].unlockCost.ToString();
+
+        } 
+
+
+        
 	}
 
     public void PressedRightButton()
