@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{CFF47080-4EB4-65DF-2CEC-717D5FE7DC11}|">
   <MonoDevelop.Ide.ItemProperties.FallingCubes PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../JumpJump/JumpJump/Assets/Scripts/DevoOrdinare/MovingObstacle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelSelection.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="13" Column="21" />
-      <File FileName="Assets/Scripts/LevelSelection.cs" Line="55" Column="31" />
-      <File FileName="Assets/Scripts/FloatingIslands/RotateIsland.cs" Line="25" Column="113" />
-      <File FileName="../../JumpJump/JumpJump/Assets/Scripts/DevoOrdinare/MovingObstacle.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="26" Column="45" />
+      <File FileName="Assets/Scripts/LevelSelection.cs" Line="46" Column="67" />
+      <File FileName="Assets/Scripts/FloatingIslands/RotateIsland.cs" Line="53" Column="12" />
+      <File FileName="../../JumpJump/JumpJump/Assets/Scripts/DevoOrdinare/MovingObstacle.cs" Line="42" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
